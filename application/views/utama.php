@@ -72,6 +72,7 @@
 		<?php echo $this->load->view('utama_main');?>
 	</section>
 
+<!-- end -->
 
 </body>
 

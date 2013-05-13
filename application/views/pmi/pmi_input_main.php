@@ -23,14 +23,22 @@
 		<?php echo form_open_multipart('controllerspmi/add_pmi'); ?>
         
         <tr>
-            <td width="128"> <strong>Equipment</strong> </td>
-            <td width="296"> &nbsp;&nbsp;<input type="text" name="equipment"/> </td>
+            <td> <strong>ID PMI</strong> </td>
+            <td> &nbsp;&nbsp;<input type="text" name="id_pmi"/> </td>
+        </tr>
+        <tr>
+            <td> <strong>Equipment</strong> </td>
+            <td> &nbsp;&nbsp;<input type="text" name="equipment"/> </td>
+        </tr>
+        <tr>
             <td> <strong>Type/Model</strong> </td>
             <td> &nbsp;&nbsp;<input type="text" name="type_model"/> </td>
         </tr>
         <tr>
             <td> <strong>No. Inventory</strong> </td>
             <td> &nbsp;&nbsp;<input type="text" name="no_inventory" /> </td>
+        </tr>
+        <tr>
             <td ><strong>Nama Unit</strong> </td>
             <td > &nbsp;
             	
@@ -51,20 +59,20 @@
             }
                             
             echo form_dropdown('unit_nama', $dropdown, 'all'); 
-        ?>
+        ?> 
+       	</tr>
+        
+         <tr>
+            <td> <strong>NO. Work Order</strong> </td>
+            <td> &nbsp;&nbsp;<input type="text" name="no_wo" value="DPS/IS/FAS/WO/"  /></td>
         </tr>
          <tr>
-            <td> <strong>No. WO</strong> </td>
-            <td> &nbsp;&nbsp;<input type="text" name="no_wo" /></td>
-  
-         
             <td> <strong>Date</strong> </td>
-           <td> &nbsp;&nbsp;<input type="text" name="date" class="calender"> </td>
+           <td> &nbsp;&nbsp;<input type="text" name="tanggal" class="calender"> </td>
         </tr>
-        <tr>
             <td> <strong>Start</strong> </td>
             <td> &nbsp;&nbsp;<input type="text" name="mulai" /></td>
-        
+        <tr>
             <td> <strong>Finish</strong> </td>
             <td> &nbsp;&nbsp;<input type="text" name="selesai" /></td>
         </tr>

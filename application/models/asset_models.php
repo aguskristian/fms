@@ -75,6 +75,52 @@
 								
 		return $action->result();
 		}
+ //=====================================BERITA ACARA====================================================
+    function add_berita($data)
+ {
+    $query =$this->db->insert('berita_acara',$data);
+ }
+ //-----------------------------------------------------------------------------------------------------
+ 	function tabel_berita()
+    		{
+				#memanggil nilai dari tabel 'asset_tabel'
+       			$query = $this->db->get('berita_acara');
+				return $query->result();
+			}
+ //-----------------------------------------------------------------------------------------------------
+   	function edit_berita($id)
+			{
+				 #mengedit nilai berdasarkan id
+				 $query = $this->db->get_where('berita_acara',array('id_berita'=>$id));
+				 return $query->row_array();
+			}         
+  //----------------------------------------------------------------------------------------------------
+    	function delete_berita($id)
+			{
+        		#menghapus nilai berdasarkan id
+				$this->db->delete('berita', array('id_berita'=>$id));
+    		}        
+ //-----------------------------------------------------------------------------------------------------
+ function dropdown_fasilitas()
+			{
+					# memilih semua data dari table kategori	
+					$this->db->from('fasilitas');
+	
+					# urutkan data berdasarkan kategori_id ascending
+					$this->db->order_by('id_fasilitas', 'ASC'); 
+			
+					$fasilitas = $this->db->get();
+			
+					# jika null atur data default kategori_id = 0
+					if ($fasilitas->num_rows() == 0)
+					{
+					$fasilitas->fasilitas= '0';
+			}
+								
+		return $fasilitas->result();
+		}
+  //---------------------------------------------------------------------------------------------------
+ 
 //=======================================ASSET==========================================================
         function siskom ($data){
             

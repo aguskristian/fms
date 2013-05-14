@@ -80,7 +80,7 @@
  
  
        
-            <td colspan="2" align="right"> <input type="submit" value="Add" > </td>
+            <td colspan="2" align="right"> <input type="submit" value="Add" /> </td>
         </tr>
  
 </table>

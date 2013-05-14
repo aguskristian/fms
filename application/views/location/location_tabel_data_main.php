@@ -24,8 +24,8 @@
             <td> <?php echo $key->sub_unit_nama; ?> </td>
             <td> <?php echo $key->lokasi_update_on; ?> </td>
             <td> <?php echo $key->lokasi_update_by; ?> </td>
-            <td><? echo anchor('controllerslc/edit_location/' . $key->lokasi_id, 'Edit'); ?></td>
-            <td><? echo anchor('controllerslc/delete_location/' . $key->lokasi_id, 'Delete'); ?></td>
+            <td><?php echo anchor('controllerslc/edit_location/' . $key->lokasi_id, 'Edit'); ?></td>
+            <td><?php echo anchor('controllerslc/delete_location/' . $key->lokasi_id, 'Delete'); ?></td>
         </tr>
         <?php endforeach; ?>
  

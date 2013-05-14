@@ -61,7 +61,7 @@
 	</header> <!-- end of header bar -->
 	
 	<section id="secondary_bar">
-		<?php echo $this->load->view('utama_secondary_bar');?>
+		<?php echo $this->load->view('pmi/pmi_edit_secondary_bar');?>
 	</section><!-- end of secondary bar -->
 	
 	<aside id="sidebar" class="column">
@@ -69,7 +69,7 @@
 	</aside><!-- end of sidebar -->
 	
 	<section id="main" class="column">
-		<?php echo $this->load->view('utama_main');?>
+		<?php echo $this->load->view('pmi/pmi_edit_main');?>
 	</section>
 
 

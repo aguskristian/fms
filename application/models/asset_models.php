@@ -48,7 +48,7 @@
 				 return $query->row_array();
 			}
 //=======================================PMI (Preventive Maintenance Instruction)=======================
-function add_pmi($data){
+    function add_pmi($data){
     
 				$query = $this->db->insert('pmi',$data);
     		
@@ -60,6 +60,19 @@ function add_pmi($data){
        			$query = $this->db->get('pmi');
 				return $query->result();
 			}
+ //-----------------------------------------------------------------------------------------------------
+ 	function edit_pmi($id)
+			{
+				 #mengedit nilai berdasarkan id
+				 $query = $this->db->get_where('pmi',array('id_pmi'=>$id));
+				 return $query->row_array();
+			}
+  //----------------------------------------------------------------------------------------------------
+  		function delete_pmi($id)
+			{
+        		#menghapus nilai berdasarkan id
+				$this->db->delete('pmi', array('id_pmi'=>$id));
+    		}
  //-----------------------------------------------------------------------------------------------------
  	function dropdown_action()
 			{

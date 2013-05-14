@@ -17,7 +17,7 @@
             <td> Start</td>
             <td> Finish</td>
             <td> Selisih</td>
-            <td> Pilihan</td>
+            <td colspan="2" > Pilihan</td>
         </tr>
         <?php foreach ($records as $key ): ?>
         <tr>
@@ -32,8 +32,8 @@
             <td> <?php echo $key->mulai; ?> </td>
             <td> <?php echo $key->selesai; ?> </td>
             <td> <?php echo $key->selisih; ?> </td>
-            <td> <?php  echo anchor('controllersreport/edit/' . $key->id_report, 'Edit'); ?></td>
-            <td> <?php  echo anchor('controllersreport/delete_report/' . $key->id_report, 'Delete'); ?></td>
+            <td><?php  echo anchor('controllersreport/edit/' . $key->id_report, 'Edit'); ?></td>
+            <td><?php  echo anchor('controllersreport/delete_report/' . $key->id_report, 'Delete'); ?></td>
         </tr>
         <?php endforeach; ?>
  

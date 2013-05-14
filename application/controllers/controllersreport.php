@@ -19,7 +19,8 @@
   {
     if ($this->ag_auth->restrict('user',TRUE))
 		#script dropdown an menuju ke function
-         $data['dropdown_unit'] = $this->asset_models->dropdown_unit_report();
+         $data['query2'] = $this->asset_models->dropdown_unit();
+
 					
     $this->load->view('report/report_input_main', $data);
   } 
@@ -31,7 +32,7 @@
     $data ['no_wo'] = $this->input->post('no_wo');
     $data ['peralatan'] = $this->input->post('peralatan');
     $data ['no_inventory'] = $this->input->post('no_inventory');
-    $data ['unit'] = $this->input->post('unit');
+    $data ['unit_nama'] = $this->input->post('unit_nama');
     $data ['jenis_kerusakan'] = $this->input->post('jenis_kerusakan');
     $data ['tindakan_perbaikan'] = $this->input->post('tindakan_perbaikan');
     $data ['mulai'] = $this->input->post('mulai');
@@ -69,21 +70,22 @@
 					 #scrit untuk memanggil data yang berada di database
 					 if ($this->ag_auth->restrict('user',TRUE))
 					 $query= $this->asset_models->edit_report($id);
+                     $data['fid_report']                = $query['id_report'];
 					 $data['ftanggal']                  = $query['tanggal'];
 					 $data['fno_wo']                    = $query['no_wo'];
 					 $data['fperalatan']                = $query['peralatan'];
 					 $data['fno_inventory']             = $query['no_inventory'];
-                     $data['funit']                     = $query['unit'];
+                     $data['funit_nama']                = $query['unit_nama'];
                      $data['fjenis_kerusakan']          = $query['jenis_kerusakan'];
                      $data['ftindakan_perbaikan']       = $query['tindakan_perbaikan'];
-                     $data['fstart']                    = $query['mulai'];
-                     $data['ffinish']                   = $query['selesai'];
+                     $data['fmulai']                    = $query['mulai'];
+                     $data['fselesai']                  = $query['selesai'];
                      $data['fselisih']                  = $query['selisih'];
 					 
 					
 					
 					#script dropdown an menuju ke function dropdown_unit_report di asset_models
-					$data['query'] = $this->asset_models->dropdown_unit_report();
+					$data['query2'] = $this->asset_models->dropdown_unit();
 					 
 					#memanggil view 'asset_edit_data' 
 					$this->load->view('report/report_edit_data',$data);
@@ -91,40 +93,44 @@
      //----------------------------------------------------------------------------------------------//
      	function submit()
     			{
+					if ($this->ag_auth->restrict('user',TRUE))
 					
 					#menyimpan nilai input di file sementara dan menyimpan ke field database
-					$tanggal                   = $this->input->post('tanggal');
-					$no_wo                     = $this->input->post('no_wo');
-					$peralatan                 = $this->input->post('peralatan');
-					$no_inventory              = $this->input->post('no_inventory');
-                    $unit                      = $this->input->post('unit');
-                    $jenis_kerusakan           = $this->input->post('jenis_kerusakan');
-                    $tindakan_perbaikan        = $this->input->post('tindakan_perbaikan');
-                    $mulai                     = $this->input->post('mulai');
-                    $selesai                   = $this->input->post('selesai');
-                    $selisih                   = $this->input->post('selisih');
-					
-					$data = array(
-					'tanggal'=>$kode,
-					'no_wo'=>$kategori,
-					'peralatan'=>$nama,
-					'no_inventory'=>$no_inventory,
-                    'unit'=>$unit,
-                    'jenis_kerusakan'=>$jenis_kerusakan,
+                    $id_report            = $this->input->post('id_report');
+                    $tanggal             = $this->input->post('tanggal');
+					$no_wo               = $this->input->post('no_wo');
+					$peralatan           = $this->input->post('peralatan');
+					$no_inventory        = $this->input->post('no_inventory');
+                   	$unit_nama           = $this->input->post('unit_nama');
+                   	$jenis_kerusakan     = $this->input->post('jenis_kerusakan');
+                   	$tindakan_perbaikan  = $this->input->post('tindakan_perbaikan');
+                   	$mulai               = $this->input->post('mulai');
+                   	$selesai             = $this->input->post('selesai');
+                    $selisih             = $this->input->post('selisih');	
+                    				
+                    $data = array(
+                    'id_report'=>$id_report,
+            		'tanggal'=>$tanggal,
+                	'no_wo'=>$no_wo,
+                	'peralatan'=>$peralatan,
+                	'no_inventory'=>$no_inventory,
+                	'unit_nama'=>$unit_nama,	
+                	'jenis_kerusakan'=>$jenis_kerusakan,
                     'tindakan_perbaikan'=>$tindakan_perbaikan,
                     'mulai'=>$mulai,
                     'selesai'=>$selesai,
                     'selisih'=>$selisih);
-					
+	
+            					
 					#script update berdasarkan 'id' terus menyimpan data 'id' yang di update ke database
-					$this->db->where('id_report',$id);
+					$this->db->where('id_report',$id_report);
 					$this->db->update('report',$data);
 					
 				 	#script mengarahkan ke tabel_asset
 					redirect('controllersreport/tabel_report');
-				}
+				}		
   //-------------------------------------------FINDING REPORT-----------------------------------------------
-  
+  			
   //--------------------------------------------------------------------------------------------------------
   
   

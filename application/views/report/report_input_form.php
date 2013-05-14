@@ -43,27 +43,28 @@
             <td width="236"> &nbsp;&nbsp;<input type="text" name="no_inventory"/> </td>
         </tr>
         <tr>
-            <td width="128"> <strong>Unit</strong> </td>
-            <td>&nbsp;&nbsp;
-            	<?php
+            <td ><strong>Nama Unit</strong> </td>
+            <td > &nbsp;
+            	
+		<?php
             #inisiasi data dropdown ke dalam array
             $dropdown = array();
         
             #tambahkan data dropdown manual selain dari database
-            $dropdown['all'] = '---- Pilih Unit ----';
+            $dropdown['all'] = '--- Unit ---';
             
                             
-            if(!empty($dropdown_unit))
+            if(!empty($query2))
             {
-                  foreach($dropdown_unit as $row) 
+                  foreach($query2 as $row) 
                     {
-                        $dropdown[$row->unit] = $row->unit;
+                        $dropdown[$row->unit_nama] = $row->unit_nama;
                     }
             }
                             
-            echo form_dropdown('unit', $dropdown, 'all'); 
-        ?>
-        </tr>
+            echo form_dropdown('unit_nama', $dropdown, 'all'); 
+        ?> 
+       	</tr>
         <tr>
            <td> <strong>Jenis Kerusakan</strong> </td>
            <td> &nbsp;&nbsp;<textarea name="jenis_kerusakan" cols="40" rows="5"></textarea> </td>

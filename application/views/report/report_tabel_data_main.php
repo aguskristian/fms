@@ -6,12 +6,12 @@
 
         <tr align="center" bgcolor="#CCCCCC">
             
-            <td> Id_Report</td>
+            <td> Id Report</td>
             <td> Tanggal</td>
             <td> No. Work Order</td>
             <td> Peralatan</td>
             <td> No. Inventory</td>
-            <td> Unit</td>
+            <td> Nama Unit</td>
             <td> Jenis Kerusakan</td>
             <td> Tindakan Perbaikan</td>
             <td> Start</td>
@@ -26,14 +26,14 @@
             <td> <?php echo $key->no_wo; ?> </td>
             <td> <?php echo $key->peralatan; ?> </td>
             <td> <?php echo $key->no_inventory; ?> </td>
-            <td> <?php echo $key->unit; ?> </td>
+            <td> <?php echo $key->unit_nama; ?> </td>
             <td> <?php echo $key->jenis_kerusakan; ?> </td>
             <td> <?php echo $key->tindakan_perbaikan; ?> </td>
             <td> <?php echo $key->mulai; ?> </td>
             <td> <?php echo $key->selesai; ?> </td>
             <td> <?php echo $key->selisih; ?> </td>
-            <td><?php echo anchor('controllersreport/edit/' . $key->id_report, 'Edit') . ' | ' . 
-                        anchor('controllersreport/delete_asset/' . $key->id_report, 'Delete'); ?></td>
+            <td> <?php  echo anchor('controllersreport/edit/' . $key->id_report, 'Edit'); ?></td>
+            <td> <?php  echo anchor('controllersreport/delete_report/' . $key->id_report, 'Delete'); ?></td>
         </tr>
         <?php endforeach; ?>
  

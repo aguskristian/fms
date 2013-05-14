@@ -9,24 +9,7 @@
     $query =$this->db->insert('report',$data);
  }
  //-----------------------------------------------------------------------------------------------------
- function dropdown_unit_report()
-			{
-					# memilih semua data dari table report		
-					$this->db->from('report');
-	
-					# urutkan data berdasarkan kategori_id ascending
-					$this->db->order_by('id_report', 'ASC'); 
-			
-					$query1 = $this->db->get();
-			
-					# jika null atur data default kategori_id = 0
-					if ($query1->num_rows() == 0)
-					{
-					$query1->id_report = '0';
-			}
-								
-		return $query1->result();
-		}
+ 
  //-----------------------------------------------------------------------------------------------------
  	function tabel_report()
     		{

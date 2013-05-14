@@ -20,35 +20,37 @@
            
     		<table width="0" border="0" align="center" cellpadding="3" cellspacing="3" background="../../images/latar.jpg">
         <?php echo form_open_multipart('controllersreport/submit'); ?>
-       	
+        
+       	 <tr>
+         <td> <strong><?php echo form_label('id_report'); ?></strong></td>
+         <td> <?php echo form_input('id_report',$fid_report,'id="id_report"'); ?></td>
+         </tr>    
          <tr>
-         <td> <strong><?php echo form_label('Tanggal'); ?></strong></td>
+         <td> <strong><?php echo form_label('tanggal'); ?></strong></td>
          <td> <?php echo form_input('tanggal',$ftanggal,'id="tanggal"'); ?></td>
          </tr>    
          
-        <tr>
-            <td ><strong>Unit</strong> </td>
-            <td >
+        <td ><strong>Nama Unit</strong> </td>
+            <td > &nbsp;
             	
 		<?php
             #inisiasi data dropdown ke dalam array
             $dropdown = array();
         
             #tambahkan data dropdown manual selain dari database
-            $dropdown['all'] = '---- Pilih Unit----';
+            $dropdown['all'] = '--- Unit/Lokasi ---';
             
                             
-            if(!empty($dropdown_unit))
+            if(!empty($query2))
             {
-                  foreach($dropdown_unit as $row) 
+                  foreach($query2 as $row) 
                     {
-                        $dropdown_unit[$row->unit] = $row->unit;
+                        $dropdown[$row->unit_nama] = $row->unit_nama;
                     }
             }
                             
-            echo form_dropdown('unit', $dropdown, 'all'); 
+            echo form_dropdown('unit_nama', $dropdown, 'all'); 
         ?>
-            
        	</tr>
         
         <tr>
@@ -72,12 +74,12 @@
          <td> <?php echo form_input('tindakan_perbaikan',$ftindakan_perbaikan,'id="tindakan_perbaikan"'); ?></td>
          </tr>
          <tr>
-         <td><strong> <?php echo form_label('Start'); ?></strong></td>
-         <td> <?php echo form_input('mulai',$fstart,'id="mulai"'); ?></td>
+         <td><strong> <?php echo form_label('mulai'); ?></strong></td>
+         <td> <?php echo form_input('mulai',$fmulai,'id="mulai"'); ?></td>
          </tr>
          <tr>
-         <td><strong> <?php echo form_label('finish'); ?></strong></td>
-         <td> <?php echo form_input('selesai',$ffinish,'id="selesai"'); ?></td>
+         <td><strong> <?php echo form_label('selesai'); ?></strong></td>
+         <td> <?php echo form_input('selesai',$fselesai,'id="selesai"'); ?></td>
          </tr>
          <tr>
          <td><strong> <?php echo form_label('selisih'); ?></strong></td>

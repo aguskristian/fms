@@ -26,8 +26,8 @@
             <td align="center"> <img src="<?php echo base_url(); ?>uploads/<?php echo $key->asset_tabel_gambar?>" width="150", height="100" /> </td>
             <td> <?php echo $key->asset_tabel_update_on; ?> </td>
             <td> <?php echo $key->asset_tabel_update_by; ?> </td>
-            <td><? echo anchor('controllersasset/edit/' . $key->asset_tabel_id, 'Edit'); ?></td>
-            <td><? echo anchor('controllersasset/delete_asset/' . $key->asset_tabel_id, 'Delete'); ?></td>
+            <td><?php echo anchor('controllersasset/edit/' . $key->asset_tabel_id, 'Edit'); ?></td>
+            <td><?php echo anchor('controllersasset/delete_asset/' . $key->asset_tabel_id, 'Delete'); ?></td>
         </tr>
         <?php endforeach; ?>
  

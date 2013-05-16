@@ -39,8 +39,7 @@
     });
 </script>
         
-		<hr/>
-            <h3>Berita Acara</h3>
+        <h3>Berita Acara</h3>
 		<ul class="toggle">
             <li class="icn_new_article"> <?php echo anchor("controllersberita/berita","Form Berita Acara");?></li>
             <li class="icn_categories">  <?php echo anchor("controllersberita/tabel_berita","Tabel Berita Acara");?></li>
@@ -64,11 +63,15 @@
             <li class="icn_categories"><?php echo anchor("controllersasset/tabel_asset_nonsiskom","Tabel Asset Non Siskom");?></li>
 		</ul>
         
+        
         <h3>Location</h3>
 		<ul class="toggle">
             <li class="icn_new_article"><?php echo anchor("controllerslc/location","Update Location");?></li>
             <li class="icn_categories"><?php echo anchor("controllerslc/tabel_location","Tabel Asset Location");?></li>
 		</ul>
+        
+        
+        
         <h3>Work Order</h3>
 		<ul class="toggle">
             <li class="icn_new_article"><?php echo anchor("controllersmt/tambah_mt","Input Maintenance");?></li>
@@ -76,6 +79,34 @@
             <li class="icn_new_article"><?php echo anchor("controllersts/tambah_ts","Input Troubleshooting");?></li>
             <li class="icn_categories"><?php echo anchor("controllersts/ts_tabel","Tabel Troubleshooting");?></li>
 		</ul>
+        
+        
+        <h3>Inventory</h3>
+            <ul class="toggle">
+        
+            <li class="icn_categories">
+            
+                <a href="#" class="subtoggleLink">Data Inventory</a>
+                <ul class="subtoggle">
+                
+                    <li class="icn_new_article"><?php echo anchor("controllersinventory/inventory","Input Data Inventory");?></li>      
+                </ul>
+            </li>
+             <li class="icn_categories">
+            
+                <a href="#" class="subtoggleLink">Tabel Inventory</a>
+                <ul class="subtoggle">
+                
+                    <li class="icn_new_article"><?php echo anchor("controllersinventory/tabel_inventory","Tabel Data Inventory");?></li> 
+                    <li class="icn_categories"><?php echo anchor("controllersinventory/tabel_asset","Tabel Asset ");?></li>     
+                </ul>
+            </li>
+			<li class="icn_categories"><?php echo anchor("controllersasset/tabel_asset","Tabel Asset ");?></li>
+            <li class="icn_categories"><?php echo anchor("controllersasset/tabel_asset_genfas","Tabel Asset Genfas");?></li>
+            <li class="icn_categories"><?php echo anchor("controllersasset/tabel_asset_siskom","Tabel Asset Siskom");?></li>
+            <li class="icn_categories"><?php echo anchor("controllersasset/tabel_asset_nonsiskom","Tabel Asset Non Siskom");?></li>
+		</ul>
+        
         <h3>Preventive Maintanance Intruction </h3>
             <ul class="toggle">
         

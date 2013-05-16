@@ -122,21 +122,8 @@
   //---------------------------------------------------------------------------------------------------
  
 //=======================================ASSET==========================================================
-        function siskom ($data){
-            
-            $query = $this->db->insert('siskom',$data);
-        } 
-        	
-        function simpan_nomor($data)
-    		{
-        		#menyimpan nilai pada tabel 'asset_tabel'
-				$query = $this->db->insert('togel_gembira',$data);
-    		}
-            
-        /** contoh **/
         
-            
-		function add_asset($data)
+  		function add_asset($data)
     		{
         		#menyimpan nilai pada tabel 'asset_tabel'
 				$query = $this->db->insert('asset_tabel',$data);
@@ -290,6 +277,38 @@
 								
 		return $query3->result();
 		}
+//=======================================INVENTORY=========================================================
+
+        function add_inventory($data)
+    		{
+        		#menyimpan nilai pada tabel 'asset_tabel'
+				$query = $this->db->insert('inventory',$data);
+    		}
+//---------------------------------------------------------------------------------------------------------
+        function tabel_inventory()
+    		{
+				#memanggil nilai dari tabel 'asset_tabel'
+       			$query = $this->db->get('inventory');
+				return $query->result();
+			}
+            
+//-------------------------------------------------------------------------------------------------------
+		
+		function delete_inventory($id)
+			{
+        		#menghapus nilai berdasarkan id
+				$this->db->delete('inventory', array('id_inventory'=>$id));
+    		}
+//-------------------------------------------------------------------------------------------------------
+		
+		function edit_inventory($id)
+			{
+				 #mengedit nilai berdasarkan id
+				 $query = $this->db->get_where('inventory',array('id_inventory'=>$id));
+				 return $query->row_array();
+			}
+			
+//-------------------------------------------------------------------------------------------------------
 
 //=======================================LOCATION==========================================================
 		function add_location($data)

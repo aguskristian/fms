@@ -35,7 +35,7 @@
                     'nama_fasilitas' => $this->input->post('nama_fasilitas'),
 					'merk_type_jenis' => $this->input->post('merk_type_jenis'),
                     'no_seri' => $this->input->post('no_seri'),
-                    'no_inventoris' => $this->input->post('no_inventoris'),
+                    'no_inventaris' => $this->input->post('no_inventaris'),
                     'lokasi_penempatan' => $this->input->post('lokasi_penempatan'),
                     'unit_penerima' => $this->input->post('unit_penerima'),
                     'unit_penyerahan' => $this->input->post('unit_penyerahan'));
@@ -79,7 +79,7 @@
 				{
 					 #scrit untuk memanggil data yang berada di database
 					 if ($this->ag_auth->restrict('user',TRUE))
-					 $query          = $this->asset_models->edit_berita($id);
+					 $query = $this->asset_models->edit_berita($id);
 					 $data['fid_berita']       = $query['id_berita'];
                      $data['fhari']            = $query['hari'];
                      $data['ftanggal']         = $query['tanggal'];
@@ -90,7 +90,7 @@
                      $data['fno_inventaris']   = $query['no_inventaris'];
                      $data['flokasi_penempatan']    = $query['lokasi_penempatan'];
                      $data['funit_penerima']        = $query['unit_penerima'];
-                     $data['funit_peyerahan']       = $query['unit_penyerahan'];
+                     $data['funit_penyerahan']       = $query['unit_penyerahan'];
                      
                	
 					#script dropdown an menuju ke function dropdown_unit_repot di asset_models
@@ -131,7 +131,7 @@
 					'unit_penyerahan' => $unit_penyerahan);
 					
 					#script update berdasarkan 'id' terus menyimpan data 'id' yang di update ke database
-					$this->db->where('id_berita',$id);
+					$this->db->where('id_berita',$id_berita);
 					$this->db->update('berita_acara',$data);
 					
 				 	#script mengarahkan ke tabel_asset

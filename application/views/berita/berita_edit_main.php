@@ -20,7 +20,7 @@
            
     		<table width="0" border="0" align="center" cellpadding="3" cellspacing="3" background="../../images/latar.jpg">
         <?php echo form_open_multipart('controllersberita/submit'); ?>
- 		<?php echo form_hidden('id_berita',$fid); ?>
+ 		<?php echo form_hidden('id_berita',$fid_berita); ?>
         
         
          <tr>
@@ -28,7 +28,7 @@
          <td> <?php echo form_input('hari',$fhari,'id="hari"'); ?></td>
          </tr>    
           <tr>
-         <td> <strong><?php echo form_label('tanggal'); ?></strong></td>
+         <td> <strong><?php echo form_label('Tanggal'); ?></strong></td>
          <td> <?php echo form_input('tanggal',$ftanggal,'id="tanggal"'); ?></td>
          </tr>
           <tr>
@@ -59,32 +59,32 @@
        	</tr>
         
         <tr>
-         <td><strong> <?php echo form_label('nama_fasilitas'); ?></strong></td>
+         <td><strong> <?php echo form_label('Nama Fasilitas'); ?></strong></td>
          <td> <?php echo form_input('nama_fasilitas',$fnama_fasilitas,'id="nama_fasilitas"'); ?></td>
          </tr>  
          
          <tr>
-         <td><strong> <?php echo form_label('merk_type_jenis'); ?></strong></td>
+         <td><strong> <?php echo form_label('Merk/Type/Jenis'); ?></strong></td>
          <td> <?php echo form_input('merk_type_jenis',$fmerk_type_jenis,'id="merk_type_jenis"'); ?></td>
          </tr>
          <tr>
-         <td><strong> <?php echo form_label('no_seri'); ?></strong></td>
+         <td><strong> <?php echo form_label('No. Seri'); ?></strong></td>
          <td> <?php echo form_input('no_seri',$fno_seri,'id="no_seri"'); ?></td>
          </tr>
          <tr>
-         <td><strong> <?php echo form_label('no_inventaris'); ?></strong></td>
+         <td><strong> <?php echo form_label('No. Inventoris'); ?></strong></td>
          <td> <?php echo form_input('no_inventaris',$fno_inventaris,'id="no_inventaris"'); ?></td>
          </tr>
          <tr>
-         <td><strong> <?php echo form_label('lokasi_penempatan'); ?></strong></td>
-         <td> <?php echo form_input('lokasi_penempatan',$fnama,'id="lokasi_penempatan"'); ?></td>
+         <td><strong> <?php echo form_label('Lokasi Penempatan'); ?></strong></td>
+         <td> <?php echo form_input('lokasi_penempatan',$flokasi_penempatan,'id="lokasi_penempatan"'); ?></td>
          </tr>
          <tr>
-         <td><strong> <?php echo form_label('unit_penerima  '); ?></strong></td>
+         <td><strong> <?php echo form_label('Unit Penerima'); ?></strong></td>
          <td> <?php echo form_input('unit_penerima',$funit_penerima,'id="unit_penerima"'); ?></td>
          </tr>
          <tr>
-         <td><strong> <?php echo form_label('unit_penyerahan'); ?></strong></td>
+         <td><strong> <?php echo form_label('Unit Penyerahan'); ?></strong></td>
          <td> <?php echo form_input('unit_penyerahan',$funit_penyerahan,'id="unit_penyerahan"'); ?></td>
          </tr>
           

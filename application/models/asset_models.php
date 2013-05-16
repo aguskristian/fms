@@ -98,7 +98,7 @@
     	function delete_berita($id)
 			{
         		#menghapus nilai berdasarkan id
-				$this->db->delete('berita', array('id_berita'=>$id));
+				$this->db->delete('berita_acara', array('id_berita'=>$id));
     		}        
  //-----------------------------------------------------------------------------------------------------
  function dropdown_fasilitas()

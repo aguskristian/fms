@@ -40,23 +40,14 @@
 </script>
         
 		<hr/>
-           
-            <h3>Fasilitas</h3>
-            <ul class="toggle">
+            <h3>Berita Acara</h3>
+		<ul class="toggle">
+            <li class="icn_new_article"> <?php echo anchor("controllersberita/berita","Form Berita Acara");?></li>
+            <li class="icn_categories">  <?php echo anchor("controllersberita/tabel_berita","Tabel Berita Acara");?></li>
+		</ul>
         
-            <li class="icn_categories"> 
-           
-           <a href="#" class="subtoggleLink">Fasilitas</a>
-            <ul class="subtoggle">
-            
-            <li class="icn_categories"><?php echo anchor("controllersasset/pasang_nomor","Pasang Togel");?></li>     
-            <li class="icn_categories"><?php echo anchor("controllersasset/siskom","materi");?></li>     
-            </ul></li>
-            </ul>
-            
-            
-            
-            <h3>Asset</h3>
+         
+           <h3>Asset</h3>
             <ul class="toggle">
         
             <li class="icn_categories">

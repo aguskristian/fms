@@ -55,15 +55,74 @@
 	}
 			
 			//-------------------------------------------------------------------------------------------------------
-			function tabel_inventory()
+			function tabel_inventory( $mode = '' )
     			{	
 					if ($this->ag_auth->restrict('user',TRUE))
 					#menuju ke function tabel_asset di asset_models
 					$data['records'] = $this->asset_models->tabel_inventory();
 					
+                    if ( 'search' == $mode ) $data['records'] = $this->asset_models->search_inventory( $this->input->post( 'search' ));                    
+                    
 					#memanggil view 'asset_tabel_data'
-					$this->load->view('inventory/inventory_tabel_data',$data);
+					$this->load->view('inventory/inventory_tabel_data', $data);
+                    
     			}
+                
+                	function tabel_unit_operation()
+				{
+					if ($this->ag_auth->restrict('user',TRUE))
+					#menuju ke function tabel_asset_genfas di asset_models
+					$data2['records1'] = $this->asset_models->tabel_unit_operation();
+					
+					#memanggil view 'asset_tabel_genfas_data'
+					$this->load->view('inventory/tabel_unit_operation_data',$data2);
+				}
+                	function tabel_unit_technic()
+				{
+					if ($this->ag_auth->restrict('user',TRUE))
+					#menuju ke function tabel_asset_genfas di asset_models
+					$data2['records2'] = $this->asset_models->tabel_unit_technic();
+					
+					#memanggil view 'asset_tabel_genfas_data'
+					$this->load->view('inventory/tabel_unit_technic_data',$data2);
+				}
+                	function tabel_unit_customerservice()
+				{
+					if ($this->ag_auth->restrict('user',TRUE))
+					#menuju ke function tabel_asset_genfas di asset_models
+					$data2['records3'] = $this->asset_models->tabel_unit_customerservice();
+					
+					#memanggil view 'asset_tabel_genfas_data'
+					$this->load->view('inventory/tabel_unit_customerservice_data',$data2);
+				}
+				
+                function tabel_unit_cargo()
+				{
+					if ($this->ag_auth->restrict('user',TRUE))
+					#menuju ke function tabel_asset_genfas di asset_models
+					$data2['records4'] = $this->asset_models->tabel_unit_cargo();
+					
+					#memanggil view 'asset_tabel_genfas_data'
+					$this->load->view('inventory/tabel_unit_cargo_data',$data2);
+				}
+                function tabel_unit_internalservice()
+				{
+					if ($this->ag_auth->restrict('user',TRUE))
+					#menuju ke function tabel_asset_genfas di asset_models
+					$data2['records5'] = $this->asset_models->tabel_unit_internalservice();
+					
+					#memanggil view 'asset_tabel_genfas_data'
+					$this->load->view('inventory/tabel_unit_internalservice_data',$data2);
+				}
+                function tabel_unit_finance()
+				{
+					if ($this->ag_auth->restrict('user',TRUE))
+					#menuju ke function tabel_asset_genfas di asset_models
+					$data2['records6'] = $this->asset_models->tabel_unit_finance();
+					
+					#memanggil view 'asset_tabel_genfas_data'
+					$this->load->view('inventory/tabel_unit_finance_data',$data2);
+				}
 				
 		
 			//-------------------------------------------------------------------------------------------------------
@@ -85,18 +144,16 @@
 				{
 					 #scrit untuk memanggil data yang berada di database
 					 if ($this->ag_auth->restrict('user',TRUE))
-                     $data['query2'] = $this->asset_models->dropdown_unit();
+                     	$data['query2'] = $this->asset_models->dropdown_unit();
                      
 					 $query = $this->asset_models->edit_inventory($id);
-					 $data['fid_inventory']    = $query['id_inventory'];
+					 $data['fid']              = $query['id_inventory'];
 					 $data['fperalatan']       = $query['peralatan'];
 					 $data['fno_inventory']    = $query['no_inventory'];
 					 $data['ftype_model']      = $query['type_model'];
 					 $data['fno_seri']         = $query['no_seri'];
-                     $data['tahun_perolehan']  = $query['tahun_perolehan'];
-                     $data['fno_seri']         = $query['no_seri'];
                      $data['ftahun_perolehan'] = $query['tahun_perolehan'];
-                     $data['funit_nama']       = $query['unit_nama'];
+                     $data['funit']            = $query['unit_nama'];
                      $data['fuser']            = $query['user'];
 					 $data['fmain_trouble']    = $query['main_trouble'];
 					 $data['fdate_trouble']    = $query['date_trouble'];
@@ -105,7 +162,6 @@
                      $data['fscrp']            = $query['scrp'];
                      $data['fremaks']          = $query['remaks'];
 					#script dropdown an menuju ke function dropdown_unit_repot di asset_models
-					$data['query2'] = $this->asset_models->dropdown_unit();
 					 
 					#memanggil view 'report_edit_data' 
 					$this->load->view('inventory/inventory_edit_data',$data);
@@ -124,7 +180,7 @@
                     $type_model             = $this->input->post('type_model');
 					$no_seri                = $this->input->post('no_seri');
                     $tahun_perolehan        = $this->input->post('tahun_perolehan');
-                    $unit_nama              = $this->input->post('unit_nama');
+                    $unit_nama                   = $this->input->post('unit_nama');
                     $user                   = $this->input->post('user');
                     $main_trouble           = $this->input->post('main_trouble');
                     $date_trouble           = $this->input->post('date_trouble');
@@ -150,13 +206,47 @@
                     'scrp'             =>$scrp,
                     'remaks'           =>$remaks);
 					#script update berdasarkan 'id' terus menyimpan data 'id' yang di update ke database
-					$this->db->where('lokasi_id',$id);
-					$this->db->update('lokasi',$data);
+					$this->db->where('id_inventory',$id_inventory);
+					$this->db->update('inventory',$data);
 					
 				 	#script mengarahkan ke tabel_asset
 					redirect('controllersinventory/tabel_inventory');
 				}
     		//-------------------------------------------------------------------------------------------------------
-			
+            function search() {
+                
+                $data['query']=$this->search->caridata();
+                
+                 //jika data yang dicari tidak ada maka akan keluar informasi 
+                //bahwa data yang dicari tidak ada
+                
+               $search_result = $this->asset_models->search( $this->input->post( 'search' ));
+                
+                /*
+                     if($query['serach']==null) {
+                             print 'maaf data yang anda cari tidak ada atau keywordnya salah';
+                             print br(2);
+                             print anchor('inventory','inventort_tabel_data_main');
+                                }
+                            else {
+                                 $this->load->view('tampil',$data); 
+                                }
+                                
+                **/
+                
+                if ( $search_result ) {
+                    
+                    $data['result'] = $search_result;
+                    
+                    $this->load->view( '', $data);
+                         
+                } else {
+                    
+                    
+                }
+                
+            }
+            
+			//-------------------------------------------------------------------------------------------------------
 	}
 ?>

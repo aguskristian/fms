@@ -31,7 +31,7 @@
                     'id_berita' => $this->input->post('id_berita'),
            			'hari' => $this->input->post('hari'),
 					'tanggal' => $this->input->post('tanggal'),
-					'jenis_fasilitas' => $this->input->post('jenis_fasilitas'),
+				    'jenis_fasilitas' => $this->input->post('jenis_fasilitas'),
                     'nama_fasilitas' => $this->input->post('nama_fasilitas'),
 					'merk_type_jenis' => $this->input->post('merk_type_jenis'),
                     'no_seri' => $this->input->post('no_seri'),
@@ -137,6 +137,8 @@
 				 	#script mengarahkan ke tabel_asset
 					redirect('controllersberita/tabel_berita');
 				}
+                
+                
     		//-------------------------------------------------------------------------------------------------------
 			
 	}

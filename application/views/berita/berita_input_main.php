@@ -53,11 +53,11 @@
             {
                   foreach($fasilitas as $row) 
                     {
-                        $dropdown[$row->nama_fasilitas] = $row->nama_fasilitas;
+                        $dropdown[$row->jenis_fasilitas] = $row->jenis_fasilitas;
                     }
             }
                             
-            echo form_dropdown('nama_fasilitas', $dropdown, 'all'); 
+            echo form_dropdown('jenis_fasilitas', $dropdown, 'all'); 
         ?>
             
        	</tr>

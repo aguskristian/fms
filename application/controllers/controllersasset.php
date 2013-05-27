@@ -172,7 +172,7 @@
 					
 					
 					#script dropdown an menuju ke function dropdown_unit_repot di asset_models
-					$data['query'] = $this->asset_models->dropdown_unit_report();
+					$data['query'] = $this->asset_models->dropdown_kategori_asset();
 					 
 					#memanggil view 'report_edit_data' 
 					$this->load->view('asset/asset_edit_data',$data);

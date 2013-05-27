@@ -120,7 +120,8 @@
 		return $fasilitas->result();
 		}
   //---------------------------------------------------------------------------------------------------
- 
+  
+ //------------------------------------------------------------------------------------------------------
 //=======================================ASSET==========================================================
         
   		function add_asset($data)
@@ -288,10 +289,61 @@
         function tabel_inventory()
     		{
 				#memanggil nilai dari tabel 'asset_tabel'
-       			$query = $this->db->get('inventory');
-				return $query->result();
+       			$this->db->select('*');
+                $this->db->from('inventory');
+                $this->db->order_by('no_inventory','asc');
+				return $this->db->get()->result();
 			}
+   
+        function tabel_unit_operation()
+			{
+				#memanggil nilai dari tabel 'asset_tabel' yang berkategori 'genfas'
+				$this->db->where('unit_nama','Operation');
+				$query1 = $this->db->get('inventory');
+				return $query1->result();
+			} 
+        function tabel_unit_technic()
+			{
+				#memanggil nilai dari tabel 'asset_tabel' yang berkategori 'genfas'
+				$this->db->where('unit_nama','technic');
+
+                $query2 = $this->db->get('inventory');
+				return $query2->result();
+			}  
             
+        function tabel_unit_customerservice()
+			{
+				#memanggil nilai dari tabel 'asset_tabel' yang berkategori 'genfas'
+				$this->db->where('unit_nama','Customer Service');
+				
+                $query3 = $this->db->get('inventory');
+				return $query3->result();
+			}  
+        function tabel_unit_cargo()
+			{
+				#memanggil nilai dari tabel 'asset_tabel' yang berkategori 'genfas'
+				$this->db->where('unit_nama','Cargo');
+				
+                $query3 = $this->db->get('inventory');
+				return $query3->result();
+			}  
+        function tabel_unit_internalservice()
+			{
+				#memanggil nilai dari tabel 'asset_tabel' yang berkategori 'genfas'
+				$this->db->where('unit_nama','Internal Service');
+				
+                $query3 = $this->db->get('inventory');
+				return $query3->result();
+			}  
+        function tabel_unit_finance()
+			{
+				#memanggil nilai dari tabel 'asset_tabel' yang berkategori 'genfas'
+				$this->db->where('unit_nama','Finance');
+				
+                $query3 = $this->db->get('inventory');
+				return $query3->result();
+			}  
+        
 //-------------------------------------------------------------------------------------------------------
 		
 		function delete_inventory($id)
@@ -307,6 +359,16 @@
 				 $query = $this->db->get_where('inventory',array('id_inventory'=>$id));
 				 return $query->row_array();
 			}
+//--------------------------------------------------------------------------------------------------------
+        function search_inventory($qword)
+        {
+            #melakukan proses searching berdasarkan field database 
+            //$query = $this->input->POST ('search');
+            $this->db->like('peralatan', $qword);
+            $this->db->or_like('no_inventory', $qword);
+            $query = $this->db->get ('inventory');
+            return $query->result(); 
+        }
 			
 //-------------------------------------------------------------------------------------------------------
 

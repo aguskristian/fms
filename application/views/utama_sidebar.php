@@ -89,7 +89,7 @@
                 <a href="#" class="subtoggleLink">Data Inventory</a>
                 <ul class="subtoggle">
                 
-                    <li class="icn_new_article"><?php echo anchor("controllersinventory/inventory","Input Data Inventory");?></li>      
+                    <li class="icn_new_carticle"><?php echo anchor("controllersinventory/inventory","Input Data Inventory");?></li>      
                 </ul>
             </li>
              <li class="icn_categories">
@@ -97,14 +97,18 @@
                 <a href="#" class="subtoggleLink">Tabel Inventory</a>
                 <ul class="subtoggle">
                 
-                    <li class="icn_new_article"><?php echo anchor("controllersinventory/tabel_inventory","Tabel Data Inventory");?></li> 
-                    <li class="icn_categories"><?php echo anchor("controllersinventory/tabel_asset","Tabel Asset ");?></li>     
+                    <li class="icn_new_article"><?php echo anchor("controllersinventory/tabel_inventory","Tabel Data Inventory");?></li>
+                    <li class="icn_new_article"><?php echo anchor("controllersinventory/tabel_unit_technic","Unit Technic");?></li> 
+                    <li class="icn_new_article"><?php echo anchor("controllersinventory/tabel_unit_operation","Unit Operation");?></li> 
+                    <li class="icn_new_article"><?php echo anchor("controllersinventory/tabel_unit_customerservice","Unit Customer Service");?></li> 
+                    <li class="icn_new_article"><?php echo anchor("controllersinventory/tabel_unit_cargo","Unit Cargo");?></li> 
+                    <li class="icn_new_article"><?php echo anchor("controllersinventory/tabel_unit_internalservice","Unit Internal Service");?></li> 
+                    <li class="icn_new_article"><?php echo anchor("controllersinventory/tabel_unit_finance","Unit Finance");?></li> 
+                    
+                       
                 </ul>
             </li>
-			<li class="icn_categories"><?php echo anchor("controllersasset/tabel_asset","Tabel Asset ");?></li>
-            <li class="icn_categories"><?php echo anchor("controllersasset/tabel_asset_genfas","Tabel Asset Genfas");?></li>
-            <li class="icn_categories"><?php echo anchor("controllersasset/tabel_asset_siskom","Tabel Asset Siskom");?></li>
-            <li class="icn_categories"><?php echo anchor("controllersasset/tabel_asset_nonsiskom","Tabel Asset Non Siskom");?></li>
+
 		</ul>
         
         <h3>Preventive Maintanance Intruction </h3>

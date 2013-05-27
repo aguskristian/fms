@@ -25,32 +25,32 @@
         <tr>
             <td> <strong>ID Inventory</strong> </td>
             <td> &nbsp;&nbsp;<input type="text" name="id_inventory"/> </td>
-        </tr>
+  
          
-        <tr>
+      
             <td> <strong>Peralatan</strong> </td>
             <td> &nbsp;&nbsp;<input type="text" name="peralatan"/> </td>
-        </tr>
+        
         
         <tr>
             <td> <strong>No. Inventory</strong> </td>
             <td> &nbsp;&nbsp;<input type="text" name="no_inventory"/> </td>
-        </tr>
         
-        <tr>
+        
+        
             <td> <strong>Type/Model</strong> </td>
             <td> &nbsp;&nbsp;<input type="text" name="type_model"/> </td>
-        </tr>
+        
         
         <tr>
             <td> <strong>No. Seri</strong> </td>
             <td> &nbsp;&nbsp;<input type="text" name="no_seri"/> </td>
-        </tr>
+  
        
-        <tr>
+        
             <td> <strong>Tahun Perolehan</strong> </td>
-            <td> &nbsp;&nbsp;<input type="text" name="type_model" class="calender"/> </td>
-        </tr>
+            <td> &nbsp;&nbsp;<input type="text" name="tahun_perolehan" class="calender"/> </td>
+
         
          <tr>
             <td ><strong>Unit</strong> </td>
@@ -75,45 +75,47 @@
             echo form_dropdown('unit_nama', $dropdown, 'all'); 
         ?>
             
-       	</tr>
+       	
+        
         
         <tr>
             <td> <strong>User</strong> </td>
             <td> &nbsp;&nbsp;<input type="text" name="user" /> </td>
-        </tr>
+        
          
-        <tr>
+        
             <td> <strong>Main Trouble</strong> </td>
             <td> &nbsp;&nbsp;<input type="text" name="main_trouble"/> </td>
         </tr>
          
-        <tr>
+        
             <td> <strong>Date Trouble</strong> </td>
             <td> &nbsp;&nbsp;<input type="text" name="date_trouble" class="calender"/> </td>
-        </tr>
+        
          
-        <tr>
+        
             <td> <strong>Kondisi Serviceable</strong> </td>
             <td> &nbsp;&nbsp;<input type="text" name="sb"/> </td>
         </tr>
-        <tr>
+        
         
             <td> <strong>Kondisi UR</strong> </td>
             <td> &nbsp;&nbsp;<input type="text" name="ur"/> </td>
-        </tr>
         
-         <tr>
+        
+        
             <td> <strong>Kondisi SCRP</strong> </td>
             <td> &nbsp;&nbsp;<input type="text" name="scrp"/> </td>
         </tr>
         <tr>
             <td> <strong>Remarks</strong> </td>
-            <td> &nbsp;&nbsp;<input type="text" name="remarks"/> </td>
+            <td> &nbsp;&nbsp;<input type="text" name="remaks"/> </td>
         </tr>
          
             <td></td>
             <td colspan="2" align="left">&nbsp;&nbsp;<input type="submit" value="Add" > </td>
         </tr>
+        
  
 </table>
 

@@ -20,22 +20,20 @@
            
     		<table width="0" border="0" align="center" cellpadding="3" cellspacing="3" background="../../images/latar.jpg">
         <?php echo form_open_multipart('controllersinventory/submit'); ?>
- 		<?php echo form_hidden('id_inventory',$fid_inventory); ?>
+ 		<?php echo form_hidden('id_inventory',$fid); ?>
         
         
-         <tr>
-         <td> <strong><?php echo form_label('ID Inventory  '); ?></strong></td>
-         <td> <?php echo form_input('id_inventory',$fid_inventory,'id="id_inventory"'); ?></td>
-         </tr> 
-         
          <tr>
          <td> <strong><?php echo form_label('Peralatan'); ?></strong></td>
          <td> <?php echo form_input('peralatan',$fperalatan,'id="peralatan"'); ?></td>
          </tr>   
-         
+         <tr>
+         <td> <strong><?php echo form_label('No. Inventory'); ?></strong></td>
+         <td> <?php echo form_input('no_inventory',$fno_inventory,'id="no_inventory"'); ?></td>
+         </tr> 
          <tr>
          <td> <strong><?php echo form_label('Type/Model'); ?></strong></td>
-         <td> <?php echo form_input('type_model',$ftype_model,'id="type_model"'); ?></td>
+         <td> <?php echo form_input('type_model',$ftype_model,'id="type_model" '); ?></td>
          </tr>
          
          <tr>
